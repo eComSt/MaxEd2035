@@ -7,3 +7,6 @@ HELLO!!!
 pydroid - приложение на  андроид
 
 https://www.online-python.com/ - онлайн интерпретатор
+
+
+Инструкции https://disk.yandex.ru/d/_eiMB-GC6WZ7pA
