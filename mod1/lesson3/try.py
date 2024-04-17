@@ -1,8 +1,3 @@
-age = 30
-if age>80:
-    print(1)
-elif age>50:
-    print(2)
-else:
-    if age>25:
-        print(3)
+ans = 1
+for i in range(1,int(input())+1): ans *= i
+print(ans)
