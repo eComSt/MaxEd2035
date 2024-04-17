@@ -10,3 +10,5 @@ https://www.online-python.com/ - онлайн интерпретатор
 
 
 Инструкции https://disk.yandex.ru/d/_eiMB-GC6WZ7pA
+
+Проект Эйлера: https://euler.jakumo.org/problems.html
