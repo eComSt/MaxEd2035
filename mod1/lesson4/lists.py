@@ -31,9 +31,16 @@ for item in my_list:
 # print(length)
 
 
-my_lst = [1,2,3]
+my_lst = [1,2,3,17,0,1,2,3]
 my_lst2 = [4,5,6]
 res_lst = my_lst+my_lst2+[7,8,9]
+res_lst2 = sorted(res_lst,reverse=True)
+# res_lst.sort(reverse=True)
+print(res_lst2)
+# print(res_lst[14])
+# for i in range(len(res_lst)):
+#     print(i, res_lst[i])
 
-for i in res_lst:
-    print(i)
+# for i, j in enumerate(res_lst):
+#     print(i, j)
+
