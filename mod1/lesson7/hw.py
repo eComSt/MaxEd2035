@@ -1,7 +1,9 @@
 def count_vowels(s):
-    vowels = "aeiouAEIOU"
     count = 0
-    for char in s:
-        if char in vowels:
+    for i in s:
+        if i in "aeiouAEIOU":
             count += 1
     return count
+
+
+print(count_vowels("Hello World"))
