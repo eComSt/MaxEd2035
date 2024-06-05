@@ -1,2 +1,1 @@
-d = {int(i): sum([int(x) for x in i]) for i in input().split()}
-print(d)
+print({int(i):sum([int(j) for j in i]) for i in input().split()})
