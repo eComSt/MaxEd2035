@@ -1,3 +1,2 @@
-st = input()
-st2 = st.split()
-ls = list(filter(lambda x: len(set(x))= , st2))
+ans = len(list(filter(lambda x: len(set(x))==len(x), input().split())))
+print(ans)
