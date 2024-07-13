@@ -25,7 +25,7 @@ class Elephant(Animal):
         self._tusk_length = tusk_length
 
     def show_tusks(self):
-        print(f"Окрас слона по имени {self._name} есть бивни длиной {self._tusk_length} см.")
+        print(f"У слона по имени {self._name} есть бивни длиной {self._tusk_length} см.")
 
 new_tiger = Tiger("Мурка", "Джунгли", "Красный")
 new_elephant = Elephant("Элли", "Саванна", 200)
