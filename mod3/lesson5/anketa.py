@@ -1,10 +1,24 @@
 from tkinter import *
+def check(e = None):
+    print(name.get(), selected.get(), age.get(), check_state.get())
+    label.configure(text=f'Спасибо, {name.get()}')
+
+def fullscreen(e = None):
+	if window.attributes('-fullscreen'): # Проверяем режим окна 
+		window.attributes('-fullscreen',False) # Меняем режим окна
+	else:
+		window.attributes('-fullscreen',True) # Меняем режим окна
+
+def on_close(e = None):
+	pass
 
 # создаем и настраиваем главное окно
 window = Tk()
 window.geometry('700x500')
 window.title('Анкета')
-
+window.bind('<F11>',fullscreen) # Биндим окно
+window.protocol('WM_DELETE_WINDOW',on_close) 
+window.attributes('-topmost',True) 
 label = Label(text='Расскажите о себе', font=('Arial', 30))
 label.place(x=200, y=10)
 
@@ -31,7 +45,12 @@ rad2.place(x=100, y=200)
 age = Spinbox(from_=0, to=200, width=20)
 age.place(x=10, y=300)
 
-check_state = IntVar()                                         check_bnt = Checkbutton(text='Запомнить меня', variable=check_state) 
+check_state = IntVar()                                         
+check_bnt = Checkbutton(text='Запомнить меня', variable=check_state) 
 check_bnt.place(x=10, y=350)
+
+btn = Button(text='Отправить', font=('Arial', 10), bg='green', command=check)                                            
+btn.place(x=100, y=400)
+btn.bind("<Enter>", check)
 # запускаем цикл обработки событий
 window.mainloop() 
