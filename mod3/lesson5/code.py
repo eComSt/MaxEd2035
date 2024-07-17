@@ -1,10 +1,8 @@
 from tkinter import *
 
 window = Tk()
-w = window.winfo_screenwidth()
-h = window.winfo_screenheight()
-print(w,h)
 window.title("My Window")
-window.geometry(f"{int(w/2)}x{int(h/2)}+400+700")
-
+window.geometry(f"400x400+400+700")
+label = Label(text='Hello', font=('Arial', 20))
+label.place(x=0, y=0)
 window.mainloop()
