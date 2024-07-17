@@ -1,4 +1,5 @@
 from random import randint
+
 class Human:
     def __init__(self, name, health):
         self._name = name
