@@ -10,3 +10,5 @@ window.geometry(f"400x400+400+400")
 btn = Button(text='Click me', font=('Arial', 20), command = press)
 btn.place(x=100, y=100)
 window.mainloop()
+# while True:
+#    window.update()
