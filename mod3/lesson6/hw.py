@@ -5,7 +5,6 @@ class Game:
     def __init__(self):
         self.comp_choice = randint(1,100)
     def move_result(self, user_choice):
-        
         if user_choice == self.comp_choice:
             return 'Вы угадали!'
         elif self.comp_choice > user_choice:
@@ -28,7 +27,7 @@ class GUI:
             user_choice = int(user_choice)
         except:
             self.lbl2['text'] = 'Введите корректное число!'
-        if user_choice >= 0 and user_choice <= 100:
+        if user_choice > 0 and user_choice < 101:
             self.lbl2['text'] = self.game.move_result(user_choice)
         else:
             self.lbl2['text'] = 'Введите число от 1 до 100 включительно!'
