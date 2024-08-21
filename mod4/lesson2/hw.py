@@ -1,7 +1,7 @@
 import requests
 from pprint import pprint
 coords = (55.0415, 82.9346)
-API_KEY = 'KEY'
+API_KEY = '37de3275-dc34-4de8-a79c-5c80e14a6746'
 url = "https://api.weather.yandex.ru/v2/forecast?"
 
 headers = {'X-Yandex-API-Key': API_KEY}
