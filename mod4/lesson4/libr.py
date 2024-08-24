@@ -1,6 +1,24 @@
-from
+from functools import wraps
+import logging
+logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s',filename='log.log')
+def log(func):
+    '''Декоратор, который выводит сообщение перед выполнением функции.'''
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        logging.info(f'Вызывается функция: {func.__name__}')
+        logging.info(f'Документация: {func.__doc__}')
+        return func(*args, **kwargs)
+    return wrapper
+
+#Debug
+#Info
+#Warning
+#Error
+#Critical
+
 books = {}
 
+@log
 def add_book(title, author):
     '''Добавляет книгу с указанным названием и автором в каталог.'''
     if title not in books:
@@ -9,6 +27,7 @@ def add_book(title, author):
     else:
         print(f'Книга {title} уже есть в каталоге.')
 
+@log
 def find_book(title):
     '''Ищет книгу по названию и возвращает статус наличия в каталоге.'''
     if title in books:
