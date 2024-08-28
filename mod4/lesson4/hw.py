@@ -1,4 +1,4 @@
-def separator(symbol, length):
+def separator(symbol='', length=0):
     def decorator(func):
         def wrapper(*args, **kwargs):
             print(symbol * length)
