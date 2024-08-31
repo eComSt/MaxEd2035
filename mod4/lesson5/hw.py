@@ -1,7 +1,7 @@
 import telebot
 from random import choice
 
-bot = telebot.TeleBot("TOKEN")
+bot = telebot.TeleBot("7193230705:AAE-atOL19XgDs1AUakruyRPSN5XgiABV6s")
 smss = []
 humor = ["– Хамелеоны могут двигать глазами в разных направлениях одновременно.",
 "– Электрический угорь может вырабатывать энергию, способную зажечь 12 лампочек.",
