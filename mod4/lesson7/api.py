@@ -8,7 +8,8 @@ def get_coords(city):
     return response[0]['lat'],response[0]['lon']
 
 
-def get_weather(coords):
+def get_weather(city):
+    coords = get_coords(city)
     url =url = 'https://api.openweathermap.org/data/2.5/weather?'
     params = {
         'lat': coords[0],
@@ -20,12 +21,15 @@ def get_weather(coords):
 
     response = requests.get(url, params=params)
     ans = response.json()
-    lst = ['Страна', "Город", ]
+    
+    lst = ['Страна', "Город", "Температура, C", 
+           "Ощущается как, C", "Максимальная температура, C",
+           "Влажность, %", "Давление, Pa", "Ветер, м/с",
+            "Облачность, %",  "Восход", "Закат", 
+    ]
 
     country = ans['sys']['country']
     town = ans['name']
-    geo = f' Погода: {country}, {town}'
-    weather_desc = ans['weather'][0]['description']
     main = ans['main']
     temp = main['temp']
     feels_like = main['feels_like']
@@ -36,5 +40,15 @@ def get_weather(coords):
     sunrise = datetime.fromtimestamp(sunrise).strftime('%H:%M:%S')
     sunset = ans['sys']['sunset']
     sunset = datetime.fromtimestamp(sunset).strftime('%H:%M:%S')
+    tmax = main['temp_max']
+    cld = ans['clouds']['all']
 
-    
+    resp = {'Страна':country, "Город":town, "Температура, C":temp, 
+           "Ощущается как, C":feels_like, "Влажность, %":humidity, "Давление, Pa":pressure,
+             "Ветер, м/с":wind, "Восход":sunrise, "Закат":sunset,
+             "Максимальная температура, C":tmax, "Облачность, %":cld,
+    }
+    return '\n'.join([f'{key}: {resp[key]}' for key in lst])
+
+
+print(get_weather('Новосибирск'))
